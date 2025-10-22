@@ -7,7 +7,7 @@
 # add Dust
 # add noise
 
-def make_parallel_simu4CMB(in_parfile, out_file, noise=False):
+def make_parallel_simu4CMB(in_parfile, out_file, noise=False, QU=False):
     from multiprocessing import Pool
     from datetime import datetime
     import json
@@ -61,10 +61,16 @@ def make_parallel_simu4CMB(in_parfile, out_file, noise=False):
         label_list_U_high[i,:,:,0] = sims[i][11]
         # higher freq
         total_map_list_Q[i,:,:,2] = sims[i][4]       
-        total_map_list_U[i,:,:,2] = sims[i][5]       
+        total_map_list_U[i,:,:,2] = sims[i][5]
 
-    write2h5(total_map_list_Q, label_list_Q, label_list_Q_low, label_list_Q_high, out_file + '_E.h5')
-    write2h5(total_map_list_U, label_list_U, label_list_U_low, label_list_U_high, out_file + '_B.h5')
+    if QU==True:       
+        write2h5(total_map_list_Q, label_list_Q, label_list_Q_low, label_list_Q_high, out_file + '_Q.h5')
+        write2h5(total_map_list_U, label_list_U, label_list_U_low, label_list_U_high, out_file + '_U.h5')
+
+    else:
+        write2h5(total_map_list_Q, label_list_Q, label_list_Q_low, label_list_Q_high, out_file + '_E.h5')
+        write2h5(total_map_list_U, label_list_U, label_list_U_low, label_list_U_high, out_file + '_B.h5')
+        
      
     p.terminate()
     print(str(datetime.now()))
@@ -593,7 +599,7 @@ def apply_smoothing(infile, outfile, in_fwhm, out_fwhm, pixsize):
 
 def main():
 
-    make_parallel_simu4CMB('./sim_cfreq143.par', './Validation', noise = False)
+    make_parallel_simu4CMB('./sim_cfreq143.par', './Validation', noise = False, QU=False)
     
 if __name__ == "__main__":
         main()
