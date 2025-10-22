@@ -1,0 +1,70 @@
+{
+    "npix": 256,
+    "pixsize": 90,
+    "Sn": -2,
+    "Sx": 2.0,
+    "train_factor": 10.0,
+    "n_sims": 1000,
+    "mean_alpha_radio_low": -0.7,
+    "mean_alpha_IR_low": 2.5,
+    "mean_alpha_radio_high": -0.7,
+    "mean_alpha_IR_high": 2.5,
+    "Pol_mu": 0.6,
+    "Pol_sigma": 1.0,
+    "Pol_mu_IR": 0.53,
+    "Pol_sigma_IR": 1.21,
+    "freq_low": 100,
+    "freq": 143,
+    "freq_high": 217,
+    "fwhm_low": 579.6,
+    "fwhm": 433.2,
+    "fwhm_high": 294.0,
+    "spp_low": 1.96,
+    "spp": 1.17,
+    "spp_high": 1.75,
+    "gal_cut": 30.0,
+    "final_smooth": 15,
+    "contaminants": ["cmb", "dust", "syn"],
+    "channels":[
+		{
+			"cmb": "./HFI_SkyMap_143_2048_R3.01_full_E.fits",
+			"dust": "./data/COM_SimMap_thermaldust_143_E.fits",
+			"syn":  "./data/COM_SimMap_synchrotron_143_E.fits",
+                        "PS":  "./data/PS_143_E.fits"
+		},
+		{
+			"cmb":"./HFI_SkyMap_143_2048_R3.01_full_E.fits",
+			"dust": "./data/COM_SimMap_thermaldust_143_B.fits",
+			"syn": "./data/COM_SimMap_synchrotron_143_B.fits",
+                        "PS":  "./data/PS_143_B.fits"
+		}
+	],
+    "channels_low":[
+		{
+			"cmb": "./HFI_SkyMap_100-field-IQU_2048_R3.00_full_E.fits",
+			"dust": "./data/COM_SimMap_thermaldust_100_E.fits",
+			"syn": "./data/COM_SimMap_synchrotron_100_E.fits",
+                        "PS":  "./data/PS_100_E.fits"
+		},
+		{
+			"cmb": "./HFI_SkyMap_100-field-IQU_2048_R3.00_full_B.fits",
+			"dust":"./data/COM_SimMap_thermaldust_100_B.fits",
+			"syn": "./data/COM_SimMap_synchrotron_100_B.fits",
+                        "PS":  "./data/PS_100_B.fits"
+		}
+	],
+    "channels_high":[
+		{
+			"cmb": "./HFI_SkyMap_217-field-IQU_2048_R3.00_full_E.fits",
+			"dust": "./data/COM_SimMap_thermaldust_217_E.fits",
+			"syn": "./data/COM_SimMap_synchrotron_217_E.fits",
+                        "PS":  "./data/PS_217_E.fits"
+		},
+		{
+			"cmb": "./HFI_SkyMap_217-field-IQU_2048_R3.00_full_B.fits",
+			"dust": "./data/COM_SimMap_thermaldust_217_B.fits",
+			"syn": "./data/COM_SimMap_synchrotron_217_B.fits",
+                        "PS":  "./data/PS_217_B.fits"
+		}
+	]
+}
