@@ -3,6 +3,13 @@
 **CENN (CMB Extraction Neural Network)** is a deep learning framework designed to generate and clean **polarization maps of the Cosmic Microwave Background (CMB)**.  
 It builds synthetic sky maps from theoretical power spectra and removes astrophysical contaminants through a fully connected neural network (FCNN) trained on multi-frequency data.
 
+Through this software, the authors demonstrate that a neural‑network‑based approach (similar in concept to our CENN) is capable of **recovering Q/U polarization sky maps** of the CMB from realistic multi‑frequency simulations (including foregrounds and noise). They show that:
+- The mean absolute error for the E‑mode and B‑mode power spectra remains small (on the order of µK²) in ideal and realistic (Planck‑level noise)
+- The method can generalize to real observational data (i.e., the processed maps agree with established component‐separation outputs like those from the Planck mission) within ~5 % at intermediate and small angular scales.
+- Although promising, the approach still faces limitations at large angular scales and in low signal‐to‐noise regimes; hence, further improvements (e.g., larger patches, more realistic noise modelling) are required for high‑precision cosmology.
+
+Our pipeline — generating maps with CAMB, adding contaminants, training CENN, and estimating spectra with NaMaster — is grounded on state‑of‑the‑art methodology and aligns with recent advances in CMB polarization analysis.
+
 ---
 
 ## 🌌 Overview
@@ -269,9 +276,16 @@ The analysis produces:
 
 These results are later used for plotting and validation of the CENN network's reconstruction performance, comparing input, output, and residual power spectra.
 
-### Summary
+---
 
-NaMaster allows for accurate estimation of pseudo-$C_\ell$ power spectra in the presence of masks and partial sky coverage. This pipeline ensures that the comparison between simulated and reconstructed CMB maps accounts for sky-cut effects and provides robust estimates of the EE and BB spectra along with their uncertainties.
+## 📚 References
+
+- Casas, J. M., Bonavera, L., González‑Nuevo, J., Puglisi, G., Baccigalupi, C., Cabo, S. R., Cueli, M. M., Crespo, D., González‑Gutiérrez, C., & de Cos, F. J. (2025). *Recovering CMB polarization maps with neural networks: Performance in realistic simulations*. *Journal of Cosmology and Astroparticle Physics*, 2025(10), 063. DOI: 10.1088/1475‑7516/2025/10/063.
+
+
+
+
+
 
 
 
